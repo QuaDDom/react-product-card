@@ -18,6 +18,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
+    "test:watch": "tsdx test --watch",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -51,15 +52,22 @@
     }
   ],
   "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
     "@rollup/plugin-image": "^2.1.1",
     "@size-limit/preset-small-lib": "^7.0.3",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
+    "@types/react-test-renderer": "^17.0.1",
     "add": "^2.0.6",
+    "babel-jest": "^27.4.4",
     "husky": "^7.0.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.4",
     "postcss": "^8.4.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-test-renderer": "^17.0.2",
     "rollup-plugin-postcss": "^4.0.2",
     "size-limit": "^7.0.4",
     "tsdx": "^0.14.1",
@@ -72,5 +80,11 @@
     "card",
     "react",
     "jadom"
-  ]
+  ],
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
+  }
 }
