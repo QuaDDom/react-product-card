@@ -35,7 +35,7 @@ describe('ProductCard', ()=>{
         let tree = wrapper.toJSON();
         expect( tree ).toMatchSnapshot();
 
-        act(()=>(tree as any).children[2].props.onClick())
+        act(()=> (tree as any).children[2].props.onClick() )
 
         tree = wrapper.toJSON();
 
